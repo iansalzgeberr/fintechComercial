@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title_line1": "The future of independent",
+    "title_line2": "work",
+    "subtitle": "starts with the <1>transaction</1>",
+    "scroll_down_label": "Scroll down"
+  },
+  "problem": {
+    "title": "Economy in motion",
+    "point1": "<strong>Digital</strong> workers living on daily, volatile incomes and outside formal systems. Current solutions are fragmented, inefficient, and do not scale.",
+    "metric_label": "+150M"
+  },
+  "perspective": {
+    "title": "A new perspective",
+    "point1_title": "Redefine the transaction.",
+    "point1_desc": "It's not just a payment, it's the beginning of an active financial relationship.",
+    "point2_title": "Turn data into value.",
+    "point2_desc": "Every interaction generates signals to design products and activate consumption.",
+    "point3_title": "Enable the ecosystem.",
+    "point3_desc": "partner-ready infrastructure (platforms, governments, and fintechs) to build upon."
+  },
+  "nippy": {
+    "title": "Transactional ecosystem",
+    "subtitle": "that connects users, data, and habits with real financial value.",
+    "logotype_alt": "Nippy Logotype"
+  },
+  "community": {
+    "title": "We validate the model with real data and key allies",
+    "subtitle": "Organic traction, processed signals, and active technology on leading platforms.",
+    "metric1_label": "Organic interactions",
+    "metric2_label": "Data processed",
+    "metric3_label": "to generate habits",
+    "metric4_label": "to detect signals",
+    "metric_value3": "Gamification",
+    "metric_value4": "Proprietary AI",
+    "validated_by": "Validated by:"
+  },
+  "infrastructure": {
+    "title": "Embedded technology to activate the <1>Mastercard</1> portfolio in the digital work economy",
+    "subtitle_line1": "We activate users, generate alternative data, accelerate the first purchase, and build loyalty.",
+    "subtitle_line2": "More transactionality. More value in every activation.",
+    "cap1_title": "Direct activation",
+    "cap1_desc": "WhatsApp, app, or API",
+    "cap2_title": "Alternative data",
+    "cap2_desc": "Income, frequency, recurrence",
+    "cap3_title": "Incentives that drive use",
+    "cap3_desc": "Gamification and habits",
+    "cap4_title": "Scalable infrastructure",
+    "cap4_desc": "Modular and adaptable"
+  },
+  "ecosystem": {
+    "title": "What's at stake",
+    "subtitle": "The digital work economy already exists. It just lacks the structure to be processed, scaled, and transformed.",
+    "metric1_label": "independent workers in LATAM",
+    "metric2_label": "average daily transactions per person",
+    "metric3_label": "daily transactions outside the traditional financial system",
+    "closing_statement": "This economy already moves <1>+500 billion dollars</1> a year.<br/> <2>Without traceability. Without real financial infrastructure.</2><br/> <3>Until now.</3>"
+  },
+"validation": {
+    "title_line1": "Driving",
+    "title_line2": "digital transformation",
+    "subtitle": "Sustainability and financial inclusion in the Dominican Republic",
+    "metric_value": "$3.2B",
+    "metric_label": "<1>In cash.</1>",
+    "flag_alt": "Flag of the Dominican Republic"
+  },
+  "dominican_republic": {
+    "title": "Transactional financial inclusion from the Caribbean",
+    "subtitle": "Together with the government, regulators, and service networks, we co-designed a solution ready to scale with <1>Mastercard</1> and strategic allies.",
+    "achievement1_value": "+500K",
+    "achievement1_label": "connected informal workers",
+    "achievement2_value": "+150K",
+    "achievement2_label": "affiliated merchants as acquiring network",
+    "achievement3_value": "Points",
+    "achievement3_label": "physical with wifi, onboarding and services",
+    "achievement4_value": "Inclusion",
+    "achievement4_label": "transactional with account, card and financial education"
+  },
+  "mastercard": {
+    "title": "What does this represent for <1>Mastercard</1>?",
+    "benefits_title": "Strategic benefits:",
+    "benefit1": "High-volume, traceable, and sustainable issuing and acquiring",
+    "benefit2": "Building financial habits from daily use",
+    "benefit3": "Access to an underpenetrated segment with data and recurrence",
+    "benefit4": "Fighting cash globally",
+    "benefit5": "Replicable strategy at a regional, public, and private level"
+  },
+  "future": {
+    "keyword1": "Dignity",
+    "keyword2": "Growth",
+    "keyword3": "Freedom",
+    "desc1": "A predictable and fair environment.",
+    "desc2": "Enabling access to financial and development opportunities.",
+    "cta_button": "Building the future of work"
+  }
+}

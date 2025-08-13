@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "title_line1": "El futuro del trabajo",
+    "title_line2": "independiente",
+    "subtitle": "comienza con la <1>transacción</1>",
+    "scroll_down_label": "Bajar"
+  },
+    "problem": {
+    "title": "Economía en movimiento",
+    "point1": "Trabajadores <strong>digitales</strong> que viven de ingresos diarios, volátiles y fuera de sistemas formales. Las soluciones actuales son fragmentadas, ineficientes y no escalan.",
+    "metric_label": "+150M"
+  },
+  "perspective": {
+    "title": "Una nueva perspectiva",
+    "point1_title": "Redefinir la transacción.",
+    "point1_desc": "No es solo un pago, es el inicio de una relación financiera activa.",
+    "point2_title": "Convertir datos en valor.",
+    "point2_desc": "Cada interacción genera señales para diseñar productos y activar consumo.",
+    "point3_title": "Habilitar el ecosistema.",
+    "point3_desc": "Infraestructura lista para que plataformas, gobiernos y fintechs construyan sobre ella."
+  },
+    "nippy": {
+    "title": "Ecosistema transaccional",
+    "subtitle": "que conecta usuarios, datos y hábitos con valor financiero real.",
+    "logotype_alt": "Logotipo de Nippy"
+  },
+    "community": {
+    "title": "Validamos el modelo con datos reales y aliados claves",
+    "subtitle": "Tracción orgánica, señales procesadas y tecnología activa en plataformas líderes.",
+    "metric1_label": "Interacciones orgánicas",
+    "metric2_label": "datos procesados",
+    "metric3_label": "para generar hábitos",
+    "metric4_label": "para detectar señales",
+    "metric_value3": "Gamificación",
+    "metric_value4": "IA propia",
+    "validated_by": "Validados por:"
+  },
+"infrastructure": {
+  "title": "Tecnología embebida para activar el portafolio de <1>Mastercard</1> en la economía digital del trabajo",
+  "subtitle_line1": "Activamos usuarios, generamos datos alternativos, aceleramos la primera compra y construimos lealtad.",
+  "subtitle_line2": "Más transaccionabilidad. Más valor en cada activación.",
+  "cap1_title": "Activación directa",
+  "cap1_desc": "WhatsApp, app o API",
+  "cap2_title": "Datos alternativos",
+  "cap2_desc": "Ingresos, frecuencia, recurrencia",
+  "cap3_title": "Incentivos que impulsan uso",
+  "cap3_desc": "Gamificación y hábitos",
+  "cap4_title": "Infraestructura escalable",
+  "cap4_desc": "Modular y adaptable"
+},
+    "ecosystem": {
+    "title": "Lo que está en juego",
+    "subtitle": "La economía digital del trabajo ya existe. Solo falta estructura para procesarla, escalarla y transformarla.",
+    "metric1_label": "trabajadores independientes en LATAM",
+    "metric2_label": "transacciones diarias promedio por persona",
+    "metric3_label": "transacciones por día fuera del sistema financiero tradicional",
+    "closing_statement": "Esta economía ya mueve <1>+500 mil millones de dólares</1> al año.<br/> <2>Sin trazabilidad. Sin estructura financiera real.</2><br/> <3>Hasta ahora.</3>"
+  },
+     "validation": {
+    "title_line1": "Impulsando la",
+    "title_line2": "transformacion digital",
+    "subtitle": "Sostenibilidad e inclusión financiera en la República Dominicana",
+    "metric_value": "$3.2B",
+    "metric_label": "Volumen anual en dinero en efectivo",
+    "flag_alt": "Bandera de la República Dominicana"
+  },
+  "dominican_republic": {
+    "title": "Inclusión financiera transaccional desde el Caribe",
+    "subtitle": "Junto al gobierno, reguladores y redes de servicios, co-diseñamos una solución lista para escalar con <1>Mastercard</1> y aliados estratégicos.",
+    "achievement1_value": "+500K",
+    "achievement1_label": "trabajadores informales conectados",
+    "achievement2_value": "+150K",
+    "achievement2_label": "comercios adheridos como red de adquirencia",
+    "achievement3_value": "Points",
+    "achievement3_label": "físicos con wifi, onboarding y servicios",
+    "achievement4_value": "Inclusión",
+    "achievement4_label": "transaccional con cuenta, tarjeta y educación financiera"
+  },
+  "mastercard": {
+    "title": "¿Qué representa esto para <1>Mastercard</1>?",
+    "benefits_title": "Beneficios estratégicos:",
+    "benefit1": "Emisión y adquirencia de alto volumen, trazable y sostenible",
+    "benefit2": "Construcción de hábitos financieros desde el uso diario",
+    "benefit3": "Acceso a un segmento underpenetrated, con data y recurrencia",
+    "benefit4": "Combatir el dinero en efectivo globalmente.",
+    "benefit5": "Estrategia replicable a nivel regional, público y privado"
+  },
+  "future": {
+    "keyword1": "Dignidad",
+    "keyword2": "Crecimiento",
+    "keyword3": "Libertad",
+    "desc1": "Un entorno predecible y justo.",
+    "desc2": "Habilitando el acceso a oportunidades financieras y de progreso.",
+    "cta_button": "Construyendo el futuro del trabajo"
+  }
+}
