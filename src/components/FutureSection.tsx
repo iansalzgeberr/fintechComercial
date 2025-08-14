@@ -107,9 +107,7 @@ const FutureSection = () => {
             `}
             style={{ transitionDelay: '0.8s' }}
           >
-            <p>
-              {t('future.desc1')}
-            </p>
+
           </div>
 
           <div

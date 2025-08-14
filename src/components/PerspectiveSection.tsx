@@ -1,7 +1,7 @@
 // components/PerspectiveSection.tsx
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Users, BarChartHorizontalBig, Zap } from 'lucide-react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 // Importa el logo con letras de Nippy desde la carpeta public
 import NippyLogotype from '/nippylogo_blanco.png';
@@ -44,18 +44,17 @@ const PerspectiveSection = () => {
   const keyPoints = [
     {
       icon: Users,
-      titleKey: "perspective.point1_title",
-      descriptionKey: "perspective.point1_desc"
+      titleKey: "perspective.point1_title"
     },
     {
       icon: BarChartHorizontalBig,
       titleKey: "perspective.point2_title",
-      descriptionKey: "perspective.point2_desc"
+     
     },
     {
       icon: Zap,
       titleKey: "perspective.point3_title",
-      descriptionKey: "perspective.point3_desc"
+
     }
   ];
 
@@ -64,7 +63,6 @@ const PerspectiveSection = () => {
       ref={sectionRef}
       id="perspective-section"
       style={{ backgroundColor: 'hsl(var(--primary))' }}
-      // Padding vertical ajustado para dar espacio
       className="min-h-screen flex flex-col justify-center px-4 md:px-8 py-20 md:py-24 relative overflow-hidden"
     >
       {/* --- Logo de Nippy --- */}
@@ -113,14 +111,6 @@ const PerspectiveSection = () => {
               <h3 className="text-lg md:text-xl font-semibold text-primary-foreground">
                 {t(point.titleKey)}
               </h3>
-              <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">
-                <Trans
-                  i18nKey={point.descriptionKey}
-                  components={{
-                    1: <em className="font-semibold italic" />,
-                  }}
-                />
-              </p>
             </div>
           ))}
         </div>
@@ -128,7 +118,6 @@ const PerspectiveSection = () => {
 
       <button
         onClick={scrollToNextSection}
-        // --- CAMBIO CLAVE: Flecha subida para mayor visibilidad en móvil ---
         className="absolute bottom-16 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300 animate-bounce-slow z-10"
         aria-label="Scroll down"
       >

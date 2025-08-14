@@ -31,9 +31,6 @@ const Index = () => {
       <CommunitySection />
       <InfrastructureSection />
       <ValidationSection />
-      <EcosystemSection />
-      {/* <DominicanRepublicSection /> ya no se renderiza */}
-      <MarketSizeSection />
       <PartnerBenefitsSection /> {/* Componente añadido para el Slide 10 */}
       <FutureSection />
     </div>

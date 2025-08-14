@@ -1,59 +1,58 @@
 {
+  
   "hero": {
-    "title_line1": "+450M daily transactions",
+    "title_line1": "+450 million",
+    "title_line1_part2": "daily transactions",
     "title_line2": "in the future of work",
-    "subtitle": "Nippy turns them into data, users, and financial value.",
+    "subtitle": "",
     "scroll_down_label": "Scroll down"
   },
   "problem": {
     "title": "Economy in motion",
-    "point1": "<strong>Digital</strong> workers living on daily, volatile incomes and outside formal systems. Current solutions are fragmented, inefficient, and do not scale.",
+    "point1": "<strong>Digital</strong> workers living on daily, volatile incomes and outside formal systems.",
     "metric_label": "+150M"
   },
   "perspective": {
-    "title": "We turn every transaction into growth",
-    "point1_title": "We capture untapped segments.",
-    "point1_desc": "Blue-collar workers, gig workers, and merchants with daily cash transactions.",
-    "point2_title": "We generate alternative data.",
-    "point2_desc": "Consumption patterns and <1>non-traditional scoring</1> for new products and credits.",
-    "point3_title": "We drive habits with gamification.",
-    "point3_desc": "With partner merchants, +3M interactions that multiply transactions."
+    "title": "We turn every transaction into growth.",
+    "point1_title": "We capture informal users",
+    "point2_title": "We generate alternative data",
+    "point3_title": "We drive consumption habits"
   },
   "nippy": {
-    "title": "The ecosystem that activates and scales",
-    "point1": "Direct activation: WhatsApp, app, or API.",
-    "point2": "Incentives to increase transactionality.",
-    "point3": "Modular and adaptable infrastructure.",
-    "point4": "Integration for banks, fintechs, and platforms.",
+    "title": "A new perspective.",
+    "pillar1_title": "Redefine the transaction",
+    "pillar1_desc": "It's not just a payment; it's the start of an active financial relationship.",
+    "pillar2_title": "Turn data into value",
+    "pillar2_desc": "Every interaction generates signals to design products and activate consumption.",
+    "pillar3_title": "Enable the ecosystem",
+    "pillar3_desc": "Ready infrastructure for platforms, governments, and fintechs to build upon.",
     "logotype_alt": "Nippy Logotype"
   },
   "community": {
-    "title": "Proven model. Real results.",
-    "metric1": "+3M organic interactions",
-    "metric2": "+30M data points processed",
-    "metric3": "Gamification that builds consumer habits",
-    "metric4": "Proprietary AI to detect signals",
-    "validated_by": "Validated by:"
+    "title": "From transaction to habit.",
+    "subtitle": "Technology, incentives, and partner merchants that turn transactions into recurring consumption.",
+    "metric_value": "+3M organic interactions"
   },
   "infrastructure": {
-    "title": "Embedded technology ready to scale",
-    "cap1_title": "Plug & Play",
-    "cap2_title": "Alternative Data",
-    "cap3_title": "Incentives",
-    "cap4_title": "Modular"
+    "title": "Data that drives decisions.",
+    "point1": "Progressive 360° profile: income, frequency, recurrence, consumption category.",
+    "point2": "Real-time transactional signals.",
+    "point3": "Alternative data for scoring and new financial products."
   },
   "ecosystem": {
-    "title": "Habits that drive consumption",
-    "text_line1": "Gamification with technology, incentives, and partner merchants,",
-    "text_line2": "transforming transactions into consumer habits.",
-    "metric": "+3M interactions in the countries where we operate."
+    "title": "What we can build together",
+    "benefit1": "<1>More transactions and higher TPV</1> from day one.",
+    "benefit2": "<1>Accelerated activation</1> with lower acquisition costs.",
+    "benefit3": "<1>Direct channel</1> to activate offers and products.",
+    "benefit4": "<1>Loyalty and recurring use</1> through incentives and gamification.",
+    "benefit5": "<1>Immediate monetization</1> of underserved segments."
   },
     "validation": {
-    "title_line1": "Data that didn't exist.",
-    "title_line2": "Until now.",
-    "point1": "Progressive 360° profile of each user: income, frequency, recurrence, consumption, and spending category.",
-    "point2": "Transactional signals that enable real-time personalized offers.",
-    "point3": "Alternative data for <1>scoring</1> and designing financial products."
+    "title": "Validating the market with key partners",
+    "point1": "+3M organic interactions.",
+    "point2": "+30M data points processed.",
+    "point3": "Gamification that drives habits.",
+    "point4": "Proprietary AI to detect signals."
   },
   
   "market_size": {
@@ -67,18 +66,17 @@
     "closing_statement": "Today: outside the system. Fragmented and inefficient."
   },
   "partner_benefits": {
-    "title": "What we can build together:",
-    "benefit1": "<1>Actionable users and data</1> for new products and monetization.",
-    "benefit2": "<1>High activation and higher TPV</1> from day one.",
-    "benefit3": "<1>Direct and powerful channel</1> for communication and offer activation.",
-    "benefit4": "<1>Loyalty platform</1> that increases retention and consumption.",
-    "benefit5": "<1>Access to underpenetrated segments</1> with daily recurrence."
+    "title": "What we can build together",
+    "benefit1": "<1>More transactions and higher TPV</1> from day one.",
+    "benefit2": "<1>Accelerated activation</1> with lower acquisition costs.",
+    "benefit3": "<1>Direct channel</1> to activate offers and products.",
+    "benefit4": "<1>Loyalty and recurring use</1> through incentives and gamification.",
+    "benefit5": "<1>Immediate monetization</1> of underserved segments."
   },
    "future": {
     "keyword1": "Dignity",
     "keyword2": "Growth",
     "keyword3": "Freedom",
-    "desc1": "Every transaction opens opportunities.",
     "cta_button": "Building the future of work"
   }
 }

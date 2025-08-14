@@ -1,7 +1,7 @@
 // components/InfrastructureSection.tsx
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, Zap, BarChart3, Gamepad2, Rows4 } from 'lucide-react';
+import { ChevronDown, CheckCircle2 } from 'lucide-react';
 
 // Importa el logo con letras de Nippy desde la carpeta public
 import NippyLogotype from '/nippylogo_blanco.png';
@@ -16,11 +16,10 @@ const InfrastructureSection = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Opcional: Dejar de observar una vez que es visible para mejorar el rendimiento
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 } // Umbral bajo para que se active pronto
+      { threshold: 0.2 }
     );
 
     const currentRef = sectionRef.current;
@@ -36,17 +35,17 @@ const InfrastructureSection = () => {
   }, []);
 
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById('ecosystem-section');
+    // Apuntamos a la siguiente sección del flujo.
+    const nextSection = document.getElementById('ecosystem-section'); 
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const capabilities = [
-     { icon: Zap, titleKey: 'infrastructure.cap1_title' },
-     { icon: BarChart3, titleKey: 'infrastructure.cap2_title' },
-     { icon: Gamepad2, titleKey: 'infrastructure.cap3_title' },
-     { icon: Rows4, titleKey: 'infrastructure.cap4_title' }
+  const dataPoints = [
+    'infrastructure.point1',
+    'infrastructure.point2',
+    'infrastructure.point3',
   ];
 
   return (
@@ -72,12 +71,12 @@ const InfrastructureSection = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full text-center">
+      <div className="max-w-4xl mx-auto w-full text-center lg:text-left">
         <h2
           className={`
             text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground
-            leading-tight tracking-tight mb-6 md:mb-8
-            transition-all duration-1000 ease-out transform
+            leading-tight tracking-tight mb-16
+            transition-all duration-1000 ease-out transform xl:text-5xl
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
           `}
           style={{ transitionDelay: '0.2s' }}
@@ -85,33 +84,27 @@ const InfrastructureSection = () => {
           {t('infrastructure.title')}
         </h2>
 
-         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-16">
-             {capabilities.map((cap, index) => (
-                 <div
-                     key={index}
-                     className={`
-                         flex flex-col items-center text-center space-y-4 p-4
-                         transition-all duration-700 ease-out transform
-                         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                     `}
-                      style={{ transitionDelay: `${0.6 + index * 0.15}s` }}
-                 >
-                     <div className="w-16 h-16 flex items-center justify-center bg-primary-foreground/10 rounded-full flex-shrink-0">
-                         <cap.icon className="text-accent w-8 h-8" strokeWidth={1.5} />
-                     </div>
-                     <div>
-                         <h3 className="text-lg md:text-xl font-semibold text-primary-foreground">
-                             {t(cap.titleKey)}
-                         </h3>
-                     </div>
-                 </div>
-             ))}
-         </div>
+         <ul className="space-y-6">
+          {dataPoints.map((pointKey, index) => (
+            <li
+              key={index}
+              className={`
+                flex items-start gap-4 text-lg md:text-xl text-primary-foreground/90
+                transition-all duration-700 ease-out transform
+                ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}
+              `}
+              style={{ transitionDelay: `${0.4 + index * 0.15}s` }}
+            >
+              <CheckCircle2 className="w-8 h-8 text-highlight flex-shrink-0 mt-1" />
+              <span>{t(pointKey)}</span>
+            </li>
+          ))}
+         </ul>
       </div>
 
       <button
         onClick={scrollToNextSection}
-        className="absolute bottom-12 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300 animate-bounce-slow z-10"
+        className="absolute bottom-12 md:bottom-8 left-1-2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300 animate-bounce-slow z-10"
         aria-label="Scroll down"
       >
         <ChevronDown size={40} strokeWidth={1.5} />
