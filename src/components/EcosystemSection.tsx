@@ -1,11 +1,11 @@
 // components/EcosystemSection.tsx
 import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { ChevronDown } from 'lucide-react';
 
-// Importa el logo con letras de Nippy desde la carpeta public
 import NippyLogotype from '/nippylogo_blanco.png';
-import GamificationImage from '/gamificacion.png'; // Asegúrate de tener una imagen en public/gamification_image.png
+// Asegúrate de que esta imagen siga existiendo en tu carpeta /public
+import GamificationImage from '/gamificacion.png'; 
 
 const EcosystemSection = () => {
   const { t } = useTranslation();
@@ -36,11 +36,20 @@ const EcosystemSection = () => {
   }, []);
 
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById('validation-section'); // Ahora apunta a la sección de "Valor de datos"
+    // Apuntamos a la última sección, que será 'future-section'.
+    const nextSection = document.getElementById('future-section');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const benefits = [
+    'ecosystem.benefit1',
+    'ecosystem.benefit2',
+    'ecosystem.benefit3',
+    'ecosystem.benefit4',
+    'ecosystem.benefit5',
+  ];
 
   return (
     <section
@@ -67,11 +76,11 @@ const EcosystemSection = () => {
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Columna de Texto */}
-        <div className="text-center lg:text-left">
+        <div className="text-left">
           <h2
             className={`
               text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground
-              leading-tight tracking-tight mb-6
+              leading-tight tracking-tight mb-12
               transition-all duration-1000 ease-out transform
               ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
             `}
@@ -80,31 +89,29 @@ const EcosystemSection = () => {
             {t('ecosystem.title')}
           </h2>
 
-          <div
-            className={`
-              space-y-3 text-lg md:text-xl text-primary-foreground/90
-              leading-relaxed max-w-xl mx-auto lg:mx-0
-              transition-all duration-1000 ease-out transform
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-            `}
-            style={{ transitionDelay: '0.4s' }}
-          >
-            <p>{t('ecosystem.text_line1')}</p>
-            <p>{t('ecosystem.text_line2')}</p>
-          </div>
-
-          <div
-            className={`
-              mt-8 bg-primary-foreground/10 inline-block p-4 rounded-lg
-              transition-all duration-1000 ease-out transform
-              ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
-            `}
-            style={{ transitionDelay: '0.6s' }}
-          >
-            <p className="text-xl md:text-2xl text-highlight font-bold">
-              {t('ecosystem.metric')}
-            </p>
-          </div>
+          <ul className="space-y-4">
+            {benefits.map((benefitKey, index) => (
+              <li
+                key={index}
+                className={`
+                  flex items-start gap-3 text-lg md:text-xl text-primary-foreground/90
+                  transition-all duration-700 ease-out transform
+                  ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}
+                `}
+                style={{ transitionDelay: `${0.4 + index * 0.1}s` }}
+              >
+                <span className="text-2xl font-bold text-highlight">{index + 1}.</span>
+                <span className="mt-0.5">
+                  <Trans
+                    i18nKey={benefitKey}
+                    components={{
+                      1: <strong className="font-bold text-primary-foreground" />,
+                    }}
+                  />
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Columna de Imagen */}
@@ -119,7 +126,7 @@ const EcosystemSection = () => {
           <img 
             src={GamificationImage} 
             alt="Gamification illustration" 
-            className="w-full max-w-md lg:max-w-lg"
+            className="w-full max-w-sm lg:max-w-md"
           />
         </div>
       </div>

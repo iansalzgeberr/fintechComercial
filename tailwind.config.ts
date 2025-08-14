@@ -1,5 +1,6 @@
 // tailwind.config.ts
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate"; // <-- AÑADIDO
 
 export default {
 	// Configure dark mode strategy if needed
@@ -96,22 +97,22 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' }
 				},
-				// Fade-in with subtle Y-translate (Adjust timing/translate here or in CSS class)
+                'marquee': {
+                  'from': { transform: 'translateX(0)' },
+                  'to': { transform: 'translateX(-50%)' },
+                },
 				'fade-in': {
 					'0%': { opacity: '0', transform: 'translateY(20px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
-				// Fade-in with scale and Y-translate
 				'fade-in-scale': {
 					'0%': { opacity: '0', transform: 'scale(0.95) translateY(20px)' },
 					'100%': { opacity: '1', transform: 'scale(1) translateY(0)' }
 				},
-				// Slide-up from further below
 				'slide-up': {
 					'0%': { transform: 'translateY(100px)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' }
 				},
-                 // Add other keyframes defined in index.css if you want to use them as Tailwind animation utilities
                  'draw-line': { from: { strokeDashoffset: '1000' }, to: { strokeDashoffset: '0' } },
                  'draw-line-delayed': { from: { strokeDashoffset: '1000' }, to: { strokeDashoffset: '0' } },
                  'draw-connection': { from: { strokeDashoffset: '1000' }, to: { strokeDashoffset: '0' } },
@@ -126,11 +127,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				// Example animations - use these classes in your components
+                'marquee': 'marquee 40s linear infinite',
 				'fade-in': 'fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
 				'fade-in-scale': 'fade-in-scale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
 				'slide-up': 'slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                 // Add other animations defined in index.css
                  'draw-line': 'draw-line 2s ease-out forwards',
                  'draw-line-delayed': 'draw-line-delayed 2s ease-out forwards',
                  'draw-connection': 'draw-connection 1s ease-out forwards',
@@ -149,5 +149,5 @@ export default {
 		}
 	},
 	// Include necessary plugins
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate], // <-- CAMBIADO
 } satisfies Config;

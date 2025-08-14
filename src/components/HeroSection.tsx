@@ -10,6 +10,7 @@ const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // ... (el resto del useEffect se mantiene igual)
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -32,6 +33,7 @@ const HeroSection = () => {
   }, []);
 
   const scrollToNextSection = () => {
+    // ... (esta función se mantiene igual)
     const nextSection = document.getElementById('problem-section');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
@@ -54,7 +56,6 @@ const HeroSection = () => {
         `}
         style={{ transitionDelay: '0.1s' }}
       >
-        {/* El logo ya no tiene redirección */}
         <img 
           src={NippyLogotype} 
           alt={t('hero.company_logo_alt')} 
@@ -77,33 +78,39 @@ const HeroSection = () => {
       </div>
 
       <div className="text-center max-w-7xl mx-auto relative z-10">
-        {/* ***** TEXTO MODIFICADO AQUÍ ***** */}
+        {/* ***** TÍTULO PRINCIPAL EN AMARILLO (AJUSTADO) ***** */}
         <h1
           className={`
-            text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground
-            leading-tight md:leading-tight lg:leading-tight xl:leading-tight
-            tracking-tight
-            mb-4
+            /* --- AQUÍ ESTÁ EL CAMBIO --- */
+            /* Usamos un valor arbitrario para un tamaño intermedio en pantallas xl */
+            text-4xl md:text-5xl lg:text-6xl xl:text-[5.2rem] /* 5.5rem = 88px */
+            /* --- FIN DEL CAMBIO --- */
+
+            font-bold text-highlight
+            leading-tight tracking-tight
             transition-all duration-1200 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
           `}
           style={{ transitionDelay: '0.3s' }}
         >
           {t('hero.title_line1')}
-          <br className="hidden md:block"/> {t('hero.title_line2')}
+          <br /> {/* <-- ESTE ES EL SALTO DE LÍNEA FORZADO */}
+          {t('hero.title_line1_part2')}
         </h1>
-        {/* ***** TEXTO MODIFICADO AQUÍ ***** */}
+        
+        {/* ***** TEXTO SECUNDARIO ***** */}
         <h2
            className={`
-            text-2xl md:text-3xl lg:text-4xl text-primary-foreground/80
-            leading-relaxed
-            mt-4 max-w-3xl mx-auto
+            text-2xl md:text-4xl lg:text-5xl font-medium
+            text-primary-foreground opacity-90
+            leading-tight
+            mt-4 
             transition-all duration-1200 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
           `}
           style={{ transitionDelay: '0.6s' }}
         >
-          {t('hero.subtitle')}
+          {t('hero.title_line2')}
         </h2>
       </div>
 

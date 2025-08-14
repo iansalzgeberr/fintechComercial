@@ -100,7 +100,7 @@ const PartnerBenefitsSection = () => {
                 `}
                 style={{ transitionDelay: `${0.6 + index * 0.1}s` }}
               >
-                <CheckCircle2 className="w-7 h-7 text-accent flex-shrink-0 mt-1" />
+                <CheckCircle2 className="w-8 h-8 text-highlight flex-shrink-0 mt-1" />
                 <span>
                   <Trans
                     i18nKey={benefitKey}
