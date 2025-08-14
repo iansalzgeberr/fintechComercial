@@ -1,6 +1,6 @@
 // components/NippySection.tsx
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, CheckCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 // Importa el nuevo logo con letras
@@ -40,6 +40,13 @@ const NippySection = () => {
     }
   };
 
+  const ecosystemPoints = [
+    'nippy.point1',
+    'nippy.point2',
+    'nippy.point3',
+    'nippy.point4',
+  ];
+
   return (
     <section
       ref={sectionRef}
@@ -67,7 +74,7 @@ const NippySection = () => {
 
         <h2
           className={`
-            text-4xl md:text-6xl lg:text-7xl font-bold text-accent
+            text-4xl md:text-5xl lg:text-6xl font-bold text-primary
             leading-none tracking-tight mb-4
             transition-all duration-1000 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
@@ -77,17 +84,23 @@ const NippySection = () => {
           {t('nippy.title')}
         </h2>
 
-        <p
+        <div
           className={`
-            text-xl md:text-2xl text-muted-foreground
-            leading-relaxed max-w-4xl mx-auto mb-12
+            max-w-3xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-left
             transition-all duration-1000 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
           `}
           style={{ transitionDelay: '0.4s' }}
         >
-          {t('nippy.subtitle')}
-        </p>
+          {ecosystemPoints.map((pointKey, index) => (
+            <div key={index} className="flex items-start space-x-3 p-2">
+              <CheckCircle className="w-7 h-7 text-accent flex-shrink-0 mt-0.5" />
+              <p className="text-lg text-muted-foreground">
+                {t(pointKey)}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <button

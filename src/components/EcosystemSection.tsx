@@ -1,10 +1,11 @@
 // components/EcosystemSection.tsx
 import { useEffect, useRef, useState } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown } from 'lucide-react';
 
 // Importa el logo con letras de Nippy desde la carpeta public
 import NippyLogotype from '/nippylogo_blanco.png';
+import GamificationImage from '/gamificacion.png'; // Asegúrate de tener una imagen en public/gamification_image.png
 
 const EcosystemSection = () => {
   const { t } = useTranslation();
@@ -16,11 +17,10 @@ const EcosystemSection = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Opcional: Dejar de observar una vez que es visible para mejorar el rendimiento
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 } // Umbral bajo
+      { threshold: 0.2 }
     );
 
     const currentRef = sectionRef.current;
@@ -36,17 +36,11 @@ const EcosystemSection = () => {
   }, []);
 
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById('validation-section');
+    const nextSection = document.getElementById('validation-section'); // Ahora apunta a la sección de "Valor de datos"
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-    const ecosystemMetrics = [
-      { value: '+150M', labelKey: 'ecosystem.metric1_label' },
-      { value: '3', labelKey: 'ecosystem.metric2_label' },
-      { value: '+450M', labelKey: 'ecosystem.metric3_label', isHighlighted: true }
-    ];
 
   return (
     <section
@@ -71,71 +65,62 @@ const EcosystemSection = () => {
         />
       </div>
       
-      <div className="max-w-7xl mx-auto w-full text-center">
-        <h2
-          className={`
-            text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground
-            leading-tight tracking-tight mb-6 md:mb-8
-            transition-all duration-1000 ease-out transform
-            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-          `}
-          style={{ transitionDelay: '0.2s' }}
-        >
-          {t('ecosystem.title')}
-        </h2>
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Columna de Texto */}
+        <div className="text-center lg:text-left">
+          <h2
+            className={`
+              text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground
+              leading-tight tracking-tight mb-6
+              transition-all duration-1000 ease-out transform
+              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+            `}
+            style={{ transitionDelay: '0.2s' }}
+          >
+            {t('ecosystem.title')}
+          </h2>
 
-        <p
-          className={`
-            text-lg md:text-2xl text-primary-foreground opacity-80
-            leading-relaxed max-w-4xl mx-auto mb-5 md:mb-20
-            transition-all duration-1000 ease-out transform
-            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-          `}
-          style={{ transitionDelay: '0.4s' }}
-        >
-          {t('ecosystem.subtitle')}
-        </p>
+          <div
+            className={`
+              space-y-3 text-lg md:text-xl text-primary-foreground/90
+              leading-relaxed max-w-xl mx-auto lg:mx-0
+              transition-all duration-1000 ease-out transform
+              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+            `}
+            style={{ transitionDelay: '0.4s' }}
+          >
+            <p>{t('ecosystem.text_line1')}</p>
+            <p>{t('ecosystem.text_line2')}</p>
+          </div>
 
-         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap- mb-5 md:mb-16">
-             {ecosystemMetrics.map((metric, index) => (
-                 <div
-                     key={index}
-                     className={`
-                         flex flex-col items-center text-center space-y-1 md:space-y-2 p-2 md:p-4
-                         transition-all duration-700 ease-out transform
-                         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-                     `}
-                      style={{ transitionDelay: `${0.6 + index * 0.1}s` }}
-                 >
-                     <div className={`text-4xl md:text-5xl lg:text-6xl font-bold ${metric.isHighlighted ? 'text-highlight' : 'text-primary-foreground'}`}>
-                         {metric.value}
-                     </div>
-                     <div className="text-sm md:text-base text-primary-foreground opacity-70 leading-tight whitespace-pre-line">
-                         {t(metric.labelKey)}
-                     </div>
-                 </div>
-             ))}
-         </div>
+          <div
+            className={`
+              mt-8 bg-primary-foreground/10 inline-block p-4 rounded-lg
+              transition-all duration-1000 ease-out transform
+              ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
+            `}
+            style={{ transitionDelay: '0.6s' }}
+          >
+            <p className="text-xl md:text-2xl text-highlight font-bold">
+              {t('ecosystem.metric')}
+            </p>
+          </div>
+        </div>
 
-        <div
+        {/* Columna de Imagen */}
+        <div 
           className={`
-            max-w-5xl mx-auto bg-primary-foreground/5 rounded-xl p-6 md:p-8
-            transition-all duration-1000 ease-out transform
-            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+            flex justify-center items-center
+            transition-all duration-1200 ease-out
+            ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-12 scale-95'}
           `}
-          style={{ transitionDelay: '1.2s' }}
+          style={{ transitionDelay: '0.3s' }}
         >
-          <p className="text-base md:text-xl text-primary-foreground leading-relaxed">
-            <Trans
-              i18nKey="ecosystem.closing_statement"
-              components={{
-                1: <strong className="text-highlight" />,
-                2: <em className="opacity-80" />,
-                3: <strong className="text-primary-foreground" />,
-                br: <br className="hidden md:inline" />,
-              }}
-            />
-          </p>
+          <img 
+            src={GamificationImage} 
+            alt="Gamification illustration" 
+            className="w-full max-w-md lg:max-w-lg"
+          />
         </div>
       </div>
 

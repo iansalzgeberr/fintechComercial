@@ -99,7 +99,7 @@ const FutureSection = () => {
 
           <div
             className={`
-              max-w-4xl mx-auto space-y-4 mb-20
+              max-w-4xl mx-auto space-y-4 my-20
               text-lg md:text-xl text-primary-foreground opacity-80
               leading-relaxed
               transition-all duration-1000 ease-out transform
@@ -109,10 +109,6 @@ const FutureSection = () => {
           >
             <p>
               {t('future.desc1')}
-            </p>
-
-            <p>
-              {t('future.desc2')}
             </p>
           </div>
 

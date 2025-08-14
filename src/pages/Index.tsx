@@ -7,9 +7,10 @@ import CommunitySection from '@/components/CommunitySection';
 import InfrastructureSection from '@/components/InfrastructureSection';
 import EcosystemSection from '@/components/EcosystemSection';
 import ValidationSection from '@/components/ValidationSection';
-import DominicanRepublicSection from '@/components/DominicanRepublicSection';
-import MastercardSection from '@/components/MastercardSection';
+// DominicanRepublicSection ha sido eliminado
 import FutureSection from '@/components/FutureSection';
+import MarketSizeSection from '@/components/MarketSizeSection';
+import PartnerBenefitsSection from '@/components/PartnerBenefitsSection'; // Este será el Slide 10
 
 const Index = () => {
   useEffect(() => {
@@ -29,10 +30,11 @@ const Index = () => {
       <NippySection />
       <CommunitySection />
       <InfrastructureSection />
-      <EcosystemSection />
       <ValidationSection />
-      <DominicanRepublicSection />
-      <MastercardSection />
+      <EcosystemSection />
+      {/* <DominicanRepublicSection /> ya no se renderiza */}
+      <MarketSizeSection />
+      <PartnerBenefitsSection /> {/* Componente añadido para el Slide 10 */}
       <FutureSection />
     </div>
   );

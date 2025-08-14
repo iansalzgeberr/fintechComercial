@@ -6,7 +6,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { ChevronDown, Globe, Zap, Gamepad2, Brain } from 'lucide-react';
+import { ChevronDown, Users, BarChart, Gamepad2, Brain } from 'lucide-react';
 
 import NippyLogotype from '/nippylogo.png';
 
@@ -52,10 +52,10 @@ const CommunitySection = () => {
   };
 
   const metrics = [
-    { icon: Globe, value: '+3M', labelKey: 'community.metric1_label'},
-    { icon: Zap, value: '+30M', labelKey: 'community.metric2_label' },
-    { icon: Gamepad2, valueKey: 'community.metric_value3', labelKey: 'community.metric3_label' },
-    { icon: Brain, valueKey: 'community.metric_value4', labelKey: 'community.metric4_label' }
+    { icon: Users, textKey: 'community.metric1' },
+    { icon: BarChart, textKey: 'community.metric2' },
+    { icon: Gamepad2, textKey: 'community.metric3' },
+    { icon: Brain, textKey: 'community.metric4' }
   ];
 
   const partners = [
@@ -103,47 +103,30 @@ const CommunitySection = () => {
           {t('community.title')}
         </h2>
 
-        <p
-          className={`
-            text-xl md:text-2xl text-muted-foreground
-            leading-relaxed max-w-5xl mx-auto 
-            // --- CAMBIO: Espaciado reducido en móvil ---
-            mb-12 md:mb-16
-            transition-all duration-1000 ease-out transform
-            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-          `}
-          style={{ transitionDelay: '0.4s' }}
-        >
-          {t('community.subtitle')}
-        </p>
-
         {/* --- CAMBIO: Espaciado reducido en móvil --- */}
-        <div className="max-w-full mx-auto mb-10 md:mb-16">
+        <div className="max-w-full mx-auto my-12 md:my-16">
              <Carousel
                  opts={{ align: "start" }}
                  className={`transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                  style={{ transitionDelay: '0.8s' }}
              >
                 <CarouselContent className="-ml-3 md:-ml-4">
-                     {metrics.map((metric, index) => (
+                     {metrics.map((item, index) => (
                          <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/4 pl-3 md:pl-4">
                              <div
                                  className={`
-                                     flex flex-col items-center text-center space-y-2 p-4
+                                     flex flex-col items-center text-center space-y-3 p-4 h-full
                                      bg-background rounded-xl shadow-sm
                                      transition-all duration-700 ease-out transform
                                      ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
                                  `}
                                  style={{ transitionDelay: `${0.8 + index * 0.1}s` }}
                              >
-                                 <div className="w-10 h-10 flex items-center justify-center bg-accent/10 rounded-full mb-2"> 
-                                     <metric.icon className="text-accent" size={20} strokeWidth={1.5} /> 
+                                 <div className="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-2"> 
+                                     <item.icon className="text-primary" size={24} strokeWidth={2} /> 
                                  </div>
-                                 <div className="text-2xl md:text-3xl font-bold text-accent"> 
-                                     {metric.value ? metric.value : t(metric.valueKey || '')}
-                                 </div>
-                                 <div className="text-sm md:text-base text-primary font-medium leading-tight">
-                                     {t(metric.labelKey)}
+                                 <div className="text-base md:text-lg text-primary font-semibold leading-tight px-2">
+                                     {t(item.textKey)}
                                  </div>
                              </div>
                          </CarouselItem>

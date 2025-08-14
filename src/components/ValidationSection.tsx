@@ -1,7 +1,7 @@
 // components/ValidationSection.tsx
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, CheckCircle2 } from 'lucide-react';
 
 // Importa el logo con letras de Nippy desde la carpeta public
 import NippyLogotype from '/nippylogo.png';
@@ -35,11 +35,19 @@ const ValidationSection = () => {
   }, []);
 
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById('dominican-republic-section');
+    // Apunta a la siguiente sección, que ahora es 'gamification-section' o 'ecosystem-section' si no creamos una nueva.
+    // Vamos a apuntar a 'ecosystem-section' por ahora
+    const nextSection = document.getElementById('ecosystem-section');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const points = [
+    'validation.point1',
+    'validation.point2',
+    'validation.point3',
+  ];
 
   return (
     <section
@@ -65,20 +73,12 @@ const ValidationSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto w-full text-center">
-        {/* --- CAMBIO: Bloque de título con bandera (imagen SVG) --- */}
         <div
           className={`
             mb-8 transition-all duration-1000 ease-out transform
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
           `}
-          style={{ transitionDelay: '0.2s' }}
-        >
-          {/* Bandera Dominicana (imagen SVG para compatibilidad total) */}
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_the_Dominican_Republic.svg" 
-            alt={t('validation.flag_alt')}
-            className="w-20 h-auto mx-auto mb-6"
-          />
+          style={{ transitionDelay: '0.2s' }}>
           <h2
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight tracking-tight"
           >
@@ -87,39 +87,38 @@ const ValidationSection = () => {
           </h2>
         </div>
 
+
         <div
-            className={`
-              max-w-4xl mx-auto mb-16 transition-all duration-1000 ease-out transform
-              ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-            `}
-            style={{ transitionDelay: '0.4s' }}
+          className={`
+            max-w-4xl mx-auto mt-16 space-y-6 text-left
+            transition-all duration-1000 ease-out
+            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+          `}
+          style={{ transitionDelay: '0.4s' }}
         >
-            <div className="inline-block bg-primary/10 p-4 rounded-lg">
-                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                    {t('validation.subtitle')}
-                </p>
-            </div>
-        </div>
-        
-        <div 
-            className={`
-                flex flex-col items-center text-center space-y-2
-                transition-all duration-700 ease-out transform
-                ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-            `}
-            style={{ transitionDelay: '0.6s' }}
-        >
-            <div className="text-7xl md:text-8xl lg:text-9xl font-bold text-accent">
-                {t('validation.metric_value')}
-            </div>
-            <div className="text-base md:text-lg text-primary leading-tight">
-                <Trans
-                  i18nKey="validation.metric_label"
-                  components={{
-                    1: <strong />,
-                  }}
-                />
-            </div>
+          <ul className="space-y-6">
+            {points.map((pointKey, index) => (
+              <li 
+                key={index}
+                className={`
+                  flex items-start gap-4 text-lg md:text-xl text-muted-foreground
+                  transition-all duration-700 ease-out transform
+                  ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}
+                `}
+                style={{ transitionDelay: `${0.6 + index * 0.15}s` }}
+              >
+                <CheckCircle2 className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+                <span>
+                  <Trans
+                    i18nKey={pointKey}
+                    components={{
+                      1: <em className="font-semibold italic" />,
+                    }}
+                  />
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

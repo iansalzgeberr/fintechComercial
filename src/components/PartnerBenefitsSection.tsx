@@ -1,12 +1,11 @@
-// components/MastercardSection.tsx
+// components/PartnerBenefitsSection.tsx
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { ChevronDown, CheckCircle2 } from 'lucide-react';
 
 import NippyLogotype from '/nippylogo_blanco.png';
-import MastercardLogo from '/mastercard_logardo.png';
 
-const MastercardSection = () => {
+const PartnerBenefitsSection = () => {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,17 +41,17 @@ const MastercardSection = () => {
   };
 
   const benefits = [
-    'mastercard.benefit1',
-    'mastercard.benefit2',
-    'mastercard.benefit3',
-    'mastercard.benefit4',
-    'mastercard.benefit5',
+    'partner_benefits.benefit1',
+    'partner_benefits.benefit2',
+    'partner_benefits.benefit3',
+    'partner_benefits.benefit4',
+    'partner_benefits.benefit5',
   ];
 
   return (
     <section
       ref={sectionRef}
-      id="mastercard-section"
+      id="partner-benefits-section"
       style={{ backgroundColor: 'hsl(var(--primary))' }}
       className="min-h-screen flex flex-col justify-center px-4 md:px-8 py-24 relative overflow-hidden"
     >
@@ -77,29 +76,19 @@ const MastercardSection = () => {
           style={{ transitionDelay: '0.2s' }}
         >
           <div className="flex flex-col justify-center items-center gap-y-6">
-            <img 
-              src={MastercardLogo} 
-              alt="Mastercard Logo" 
-              className="w-28 h-auto"
-            />
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground leading-tight tracking-tight">
-              <Trans
-                i18nKey="mastercard.title"
-                components={{ 1: <span className="text-highlight font-bold" /> }}
-              />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight tracking-tight">
+              {t('partner_benefits.title')}
             </h2>
           </div>
         </div>
         
         <div
           className={`
-            max-w-3xl mx-auto
+            max-w-4xl mx-auto
             transition-all duration-1000 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
           `}
-          style={{ transitionDelay: '0.4s' }}
-        >
-          <h3 className="text-xl md:text-2xl font-semibold text-accent mb-6">{t('mastercard.benefits_title')}</h3>
+          style={{ transitionDelay: '0.4s' }}>
           <ul className="space-y-4 text-left">
             {benefits.map((benefitKey, index) => (
               <li 
@@ -111,8 +100,15 @@ const MastercardSection = () => {
                 `}
                 style={{ transitionDelay: `${0.6 + index * 0.1}s` }}
               >
-                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                <span>{t(benefitKey)}</span>
+                <CheckCircle2 className="w-7 h-7 text-accent flex-shrink-0 mt-1" />
+                <span>
+                  <Trans
+                    i18nKey={benefitKey}
+                    components={{
+                      1: <strong className="font-bold text-primary-foreground" />,
+                    }}
+                  />
+                </span>
               </li>
             ))}
           </ul>
@@ -130,4 +126,4 @@ const MastercardSection = () => {
   );
 };
 
-export default MastercardSection;
+export default PartnerBenefitsSection;

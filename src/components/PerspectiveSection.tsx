@@ -1,7 +1,7 @@
 // components/PerspectiveSection.tsx
 import { useEffect, useRef, useState } from 'react';
-import { ChevronDown, Repeat, BarChartHorizontalBig, ArrowRightCircle } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import { ChevronDown, Users, BarChartHorizontalBig, Zap } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 
 // Importa el logo con letras de Nippy desde la carpeta public
 import NippyLogotype from '/nippylogo_blanco.png';
@@ -43,7 +43,7 @@ const PerspectiveSection = () => {
 
   const keyPoints = [
     {
-      icon: Repeat,
+      icon: Users,
       titleKey: "perspective.point1_title",
       descriptionKey: "perspective.point1_desc"
     },
@@ -53,7 +53,7 @@ const PerspectiveSection = () => {
       descriptionKey: "perspective.point2_desc"
     },
     {
-      icon: ArrowRightCircle,
+      icon: Zap,
       titleKey: "perspective.point3_title",
       descriptionKey: "perspective.point3_desc"
     }
@@ -86,7 +86,7 @@ const PerspectiveSection = () => {
       <div className="max-w-7xl mx-auto w-full text-center">
         <h2
           className={`
-            text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground
+            text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground
             leading-tight tracking-tight mb-12 md:mb-20
             transition-all duration-1000 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
@@ -96,12 +96,12 @@ const PerspectiveSection = () => {
           {t('perspective.title')}
         </h2>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           {keyPoints.map((point, index) => (
             <div
               key={index}
               className={`
-                flex flex-col items-center text-center space-y-2
+                flex flex-col items-center text-center space-y-3
                 transition-all duration-700 ease-out
                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
               `}
@@ -110,13 +110,16 @@ const PerspectiveSection = () => {
               <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-accent/10 rounded-full mb-2 md:mb-4">
                 <point.icon className="text-accent w-7 h-7 md:w-8 md:h-8" strokeWidth={1.5} />
               </div>
-              {/* --- CAMBIO: Tamaño de fuente ajustado --- */}
               <h3 className="text-lg md:text-xl font-semibold text-primary-foreground">
                 {t(point.titleKey)}
               </h3>
-              {/* --- CAMBIO: Tamaño de fuente ajustado --- */}
-              <p className="text-sm md:text-base text-primary-foreground/70 leading-relaxed">
-                {t(point.descriptionKey)}
+              <p className="text-sm md:text-base text-primary-foreground/80 leading-relaxed">
+                <Trans
+                  i18nKey={point.descriptionKey}
+                  components={{
+                    1: <em className="font-semibold italic" />,
+                  }}
+                />
               </p>
             </div>
           ))}

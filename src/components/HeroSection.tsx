@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import NippyLogotype from '/nippylogo_blanco.png';
 
@@ -95,21 +95,15 @@ const HeroSection = () => {
         {/* ***** TEXTO MODIFICADO AQUÍ ***** */}
         <h2
            className={`
-            text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary-foreground opacity-90
-            leading-tight md:leading-tight lg:leading-tight xl:leading-tight
-            tracking-tight
-            mt-2
+            text-2xl md:text-3xl lg:text-4xl text-primary-foreground/80
+            leading-relaxed
+            mt-4 max-w-3xl mx-auto
             transition-all duration-1200 ease-out
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
           `}
           style={{ transitionDelay: '0.6s' }}
         >
-          <Trans
-            i18nKey="hero.subtitle"
-            components={{
-              1: <span className="text-highlight" />,
-            }}
-          />
+          {t('hero.subtitle')}
         </h2>
       </div>
 
@@ -118,7 +112,7 @@ const HeroSection = () => {
           className="absolute bottom-20 md:bottom-8 left-1/2 transform -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300 animate-bounce-slow z-10"
           aria-label={t('hero.scroll_down_label')}
         >
-          <ChevronDown size={32} strokeWidth={1.5} /> {/* Sugerencia: también reduje un poco el ícono para que coincida */}
+          <ChevronDown size={32} strokeWidth={1.5} />
         </button>
     </section>
   );
