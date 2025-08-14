@@ -36,7 +36,7 @@ const InfrastructureSection = () => {
 
   const scrollToNextSection = () => {
     // Apuntamos a la siguiente sección del flujo.
-    const nextSection = document.getElementById('ecosystem-section'); 
+    const nextSection = document.getElementById('validation-section'); 
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }
@@ -104,7 +104,10 @@ const InfrastructureSection = () => {
 
       <button
         onClick={scrollToNextSection}
-        className="absolute bottom-12 md:bottom-8 left-1-2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300 animate-bounce-slow z-10"
+        // --- ¡AQUÍ ESTÁ LA CORRECCIÓN! ---
+        // Antes: left-1-2 -translate-x-1-2
+        // Ahora: left-1/2 -translate-x-1/2
+        className="absolute bottom-12 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300 animate-bounce-slow z-10"
         aria-label="Scroll down"
       >
         <ChevronDown size={40} strokeWidth={1.5} />
